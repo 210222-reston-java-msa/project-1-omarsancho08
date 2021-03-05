@@ -1,0 +1,2 @@
+2021-03-05 00:05:47 INFO  ConnectionUtil:43 - connection successful
+2021-03-05 00:05:47 INFO  ConnectionUtil:53 - connected to db
