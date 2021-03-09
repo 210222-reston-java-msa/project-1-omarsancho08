@@ -1,6 +1,10 @@
 create schema project1;
 
-create table UserRoles(
+drop schema project1 cascade;
+drop table users;
+drop table UserRoles cascade;
+
+create table roles(
 
 	id serial primary key,
 	role_name varchar(50) unique not null
@@ -13,9 +17,8 @@ create table users(
 	first_name varchar(50) not null,
 	last_name varchar(50) not null,
 	email varchar(50) unique,
-	role_id int not null references UserRoles(id)
+	role_id int not null references roles(id)
 );
-
 
 create table reimbursement_status(
 	id serial primary key,
@@ -46,6 +49,17 @@ values ('1','Pending'),
 		('2','Approved'),
 		('3','Denied');
 
-select * from userroles;
+select * from roles;
 select * from reimbursement_status;
+select * from users;
+SELECT * FROM users INNER JOIN roles ON users.role_id = roles.id
 
+
+insert into users (username,pass,first_name, last_name,email, role_id)
+values('lilbaby','pass','omar','sancho','lilbaby@yahoo.com', '1');
+
+insert into roles (id, role_name) values
+('1','Manager');
+
+insert into roles (id, role_name) values
+('2','Employee');
