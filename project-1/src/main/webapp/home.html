@@ -2,29 +2,419 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
-
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-	crossorigin="anonymous">
+<title>Employee Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+rel="stylesheet"
+/>
 </head>
 <body>
-	<div class="jumbotron">
-		<h1 id="welcome">You are Logged in!</h1>
-		
-		<a class="btn btn success" onclick="logout()">Logout</a>
+
+	<!--header start-->
+
+	<header>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+		  <div class="container-fluid">
+			<button
+			  class="navbar-toggler"
+			  type="button"
+			  data-mdb-toggle="collapse"
+			  data-mdb-target="#navbarExample01"
+			  aria-controls="navbarExample01"
+			  aria-expanded="false"
+			  aria-label="Toggle navigation"
+			>
+			  <i class="fas fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarExample01">
+			  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item active">
+				  <a class="btn btn-warning nav-link" onclick="logout()">Logout</a>
+				</li>
+			   
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+		<!-- Navbar -->
+	  
+		<!-- Jumbotron -->
+		<div class="p-5 text-center bg-light">
+		  <h1 class="mb-3" id="welcome">You are Logged in</h1>	
+		</div>
+		<!-- Jumbotron -->
+	  </header>
+
+	<div class="container">
+
+		<div
+class="modal fade"
+id="editInfoModal"
+tabindex="-1"
+aria-labelledby="editInfoModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="editInfoModalLabel">All Tickets</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-mdb-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Amount</th>
+                  <th>Date Submited</th>
+                  <th>Date Resolved</th>
+                  <th>Description</th>
+                  <th>Author</th>
+                  <th>Resolver</th>
+                  <th>Status</th>
+                  <th>Expense Type</th>
+                  <th>Username</th>
+    
+                </tr>
+            </thead>
+            <tbody id="output">
+               
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" id="mybtn">Get Tickets</button>
+    </div>
+  </div>
+</div>
+</div>
+     
+
+       
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4" >
+    <div class="col">
+      <div class="card h-100">
+        <img
+          src="https://img.icons8.com/dusk/256/000000/news.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <button class="btn btn-outline-primary container" data-mdb-toggle="modal"
+          data-mdb-target="#editInfoModal">View Past claims</button>
+          <p class="card-text">
+            View Your Past Tickets
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img
+          src="https://img.icons8.com/bubbles/200/000000/reminders.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <button class="btn btn-outline-primary container" data-mdb-toggle="modal"
+          data-mdb-target="#reimbModal">File Claim</button>
+          <p class="card-text">
+            Submit invoice for refunds
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img
+          src="https://img.icons8.com/bubbles/250/000000/edit.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <button class="btn btn-outline-primary container"data-mdb-toggle="modal"
+          data-mdb-target="#updateInfoModal">Updat Personal Information</button>
+          <p class="card-text">
+           Edit your peronsal Information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 		
 	</div>
+
+  <!-- refund Modal -->
+<div
+class="modal fade"
+id="reimbModal"
+tabindex="-1"
+aria-labelledby="reimbModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="reimbModalLabel">Reimbursement Form</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-mdb-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <form action="insertReimb" method="POST">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="amount">Amount:</span>
+                <input
+                  type="number"
+                  name="amount"
+                  id="amount"
+                  class="form-control"
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="submit_date"
+                  >Date Submitted:</span
+                >
+                <input
+                  type="date"
+                  name="submit_date"
+                  id="submit_date"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="author">Author:</span>
+                  <input
+                    type="number"
+                    name="author"
+                    id="author"
+                    class="form-control"
+                    min="0"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="status_id"
+                    >Claim Status:</span
+                  >
+                  <select name="status_id" id="status_id" class="form-control">
+                      <option value="3">Pending</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="type_id">Expense Type:</span>
+                  <select name="type_id" id="type_id" class="form-control">
+                      <option value="1">Travel Expense</option>
+                      <option value="2">Relocation Expense</option>
+                      <option value="3">Misc Expense</option>
+                  </select>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="resolver">Resolver:</span>
+                    <select name="resolver" id="resolver" class="form-control">
+                        <option value="1">Admin</option>
+                    </select>
+                  </div>
+                  </div>
+              </div>
+              
+              <div class="row mt-4">
+                  <div class="col-md-12">
+                      <div class="input-group flex-nowrap">
+                          <span class="input-group-text" id="date_resolved">Date Resolver:</span>
+                        <input type="date" class="form-control" name="date_resolved" id="date_resolved" value="0001-01-01">
+                      </div>
+                    </div>
+                  </div>
+              
+              <div class="row mt-4">
+                  <div class="col-md-12">
+                      <div class="input-group flex-nowrap">
+                        <textarea name="description" 
+                        id="description" 
+                        cols="40" rows="10"
+                         class="form-control" placeholder="Reason For Expense" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+  
+              <div class="row mt-3">
+                  <div class="col">
+                      <input type="submit" class="btn btn-success" value="Submit">
+                      <input type="reset" class="btn btn-secondary" value="Reset Form">
+                  </div>
+              </div>
+        </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div
+class="modal fade"
+id="updateInfoModal"
+tabindex="-1"
+aria-labelledby="updateInfoModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="updateInfoModalLabel">
+        Personal Information
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-mdb-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form action="updateUser" method="POST">
+        <div class="container">
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="id">ID:</span>
+            <input
+              type="number"
+              class="form-control"
+              name="id"
+              id="id"
+              placeholder="Enter ID"
+              min="0"
+              required
+            />
+          </div>
+  
+          <div class="input-group flex-nowrap mt-3">
+            <span class="input-group-text" id="first_name">First Name:</span>
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              class="form-control"
+              placeholder="Enter your First Name"
+              required
+            />
+          </div>
+  
+          <div class="input-group flex-nowrap mt-3">
+            <span class="input-group-text" id="last_name">Last Name:</span>
+            <input
+              type="text"
+              class="form-control"
+              name="last_name"
+              id="last_name"
+              placeholder="Enter last name"
+              required
+            />
+          </div>
+  
+          <div class="input-group flex-nowrap mt-3">
+            <span class="input-group-text" id="email">Email:</span>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+  
+          <input
+            class="btn btn-outline-primary mt-3"
+            type="submit"
+            value="submit"
+            
+          />
+          <input
+            class="btn btn-outline-secondary mt-3"
+            type="reset"
+            value="Reset"
+          />
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+	<footer class="bg-dark text-center text-white" style="position:absolute; bottom:0; width:100%;">
+  
+		<!-- Copyright -->
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		  &copy;2020 Project-1:
+		 
+		</div>
+		<!-- Copyright -->
+	  </footer>
 	
 	<script>
-		
+  
 	// capture the welcome element and modofy it so that it says welcome + username
 	let welcome = document.getElementById('welcome');
-	
+	let author= document.getElementById('id');
+  let first_name=document.getElementById('first_name');
+  let last_name=document.getElementById('last_name');
+  let email=document.getElementById('email');
+
 	// capture the userString by accessing the session.....
 	let userString = sessionStorage.getItem('currentUser');
-	
 	// set up some logic....
 	// IF the user is null....redirect them to the index.html page ("http://localhost:8080/EmployeeDBServlets/")
 	if (userString === null) {
@@ -38,10 +428,14 @@
 		if (currentUser != null) {
 			
 			welcome.innerHTML = "Welcome " + currentUser.firstName + " " + currentUser.lastName;
-			
+			author.innerHTML=currentUser.id;
+      first_name.innerHTML=currentUser.firstName;
+      last_name.innerHTML=currentUser.lastName;
+      email.innerHTML=currentUser.email;
 		}
 		
 	}
+
 
 	
 	function logout() {
@@ -57,6 +451,35 @@
 	}
 
 	</script>
-	
+
+<script>
+	var emp='';
+	$('#mybtn').click(function () {
+
+		$.getJSON('employees', function (data) {
+			
+			$("tbody#output > td").remove();
+			
+			$.each(data, function (key, value) {
+
+				$("#output").append('<tr><td>' +value['id'] +"</td>"+
+								   "<td>"+value['amount'] + "</td>"+
+								   "<td>"+value['date_submit'] + "</td>"+
+								   "<td>"+value['date_resolved'] + "</td>"+
+								   "<td>"+value['desc'] + "</td>"+
+								   "<td>"+value['author'] + "</td>"+
+								   "<td>"+value['resolver'] + "</td>"+
+                   "<td>"+value['statusId'] + "</td>"+
+                   "<td>"+value['typeId'] + "</td>"+
+                   "<td>"+value['username'] + "</td>"+
+									'</td></tr>');
+			});
+		});
+	});
+</script>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+></script>
 </body>
 </html>
