@@ -1,190 +1,215 @@
-2021-03-05 00:05:47 INFO  ConnectionUtil:43 - connection successful
-2021-03-05 00:05:47 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:12:28 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:12:28 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:12:28 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:12:28 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:12:29 WARN  UserDaoImpl:40 - Unable to insert user
+2021-03-04 07:20:48 INFO  ConnectionUtil:47 - connection successful
+2021-03-04 07:20:48 INFO  ConnectionUtil:57 - connected to db
+2021-03-04 07:22:38 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:22:38 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 07:22:38 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:22:38 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 07:22:39 WARN  EmployeeDAOImpl:41 - Unable to insert user
 org.postgresql.util.PSQLException: ERROR: relation "employee" does not exist
   Position: 13
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:35)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:36)
-	at com.revature.Driver.main(Driver.java:18)
-2021-03-08 15:14:13 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:14:13 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:14:13 WARN  UserDaoImpl:40 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(0) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:35)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:36)
-	at com.revature.Driver.main(Driver.java:16)
-2021-03-08 15:36:43 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:36:43 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:36:43 WARN  UserDaoImpl:83 - Unable to retrieve all users
-org.postgresql.util.PSQLException: The column name pass_word was not found in this ResultSet.
-	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
-	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
-	at com.revature.repo.UserDaoImpl.findAll(UserDaoImpl.java:75)
-	at com.revature.services.EmployeeServices.findAll(EmployeeServices.java:23)
-	at com.revature.Driver.main(Driver.java:17)
-2021-03-08 15:42:09 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:42:09 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:42:42 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:42:42 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:46:24 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:46:24 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:46:24 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(0) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:42)
-	at com.revature.Driver.main(Driver.java:16)
-2021-03-08 15:49:53 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:49:53 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:49:53 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(2) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:42)
-	at com.revature.Driver.main(Driver.java:16)
-2021-03-08 15:50:20 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:50:20 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:50:20 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(2) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:42)
-	at com.revature.Driver.main(Driver.java:16)
-2021-03-08 15:54:33 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:54:33 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 15:54:33 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(2) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.services.EmployeeServices.insertEmployee(EmployeeServices.java:42)
-	at com.revature.Driver.main(Driver.java:16)
-2021-03-08 15:58:12 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 15:58:12 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 16:03:07 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 16:03:07 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 16:03:07 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(2) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.Driver.main(Driver.java:19)
-2021-03-08 16:03:07 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 16:03:07 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 16:05:05 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 16:05:05 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 16:05:05 WARN  UserDaoImpl:42 - Unable to insert user
-org.postgresql.util.PSQLException: ERROR: insert or update on table "users" violates foreign key constraint "users_role_id_fkey"
-  Detail: Key (role_id)=(2) is not present in table "userroles".
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
-	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
-	at com.revature.repo.UserDaoImpl.insert(UserDaoImpl.java:37)
-	at com.revature.Driver.main(Driver.java:19)
-2021-03-08 16:05:05 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 16:05:05 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 16:56:15 WARN  ConnectionUtil:45 - unable to obtain a connection to the database
-2021-03-08 16:56:15 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:11:22 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:11:22 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:11:22 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:11:22 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:15:45 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:15:45 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:16:24 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:16:24 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:16:24 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:16:24 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:17:43 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:17:43 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:17:43 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:17:43 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:26:02 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:26:02 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:26:02 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:26:02 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:26:41 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:26:41 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:26:41 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:26:42 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:27:51 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:27:51 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:27:51 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:27:51 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:28:13 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:28:13 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:28:13 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:28:13 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:29:47 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:29:47 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:31:29 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:31:29 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:35:41 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:35:41 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 17:35:41 WARN  UserDaoImpl:91 - Unable to retrieve all users
-org.postgresql.util.PSQLException: The column name pass_word was not found in this ResultSet.
-	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
-	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2480)
-	at com.revature.repo.UserDaoImpl.findAll(UserDaoImpl.java:83)
-	at com.revature.services.EmployeeServices.findByUsername(EmployeeServices.java:49)
-	at com.revature.Driver.main(Driver.java:22)
-2021-03-08 17:37:04 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 17:37:04 INFO  ConnectionUtil:53 - connected to db
-2021-03-08 20:12:50 INFO  ConnectionUtil:43 - connection successful
-2021-03-08 20:12:50 INFO  ConnectionUtil:53 - connected to db
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:143)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:132)
+	at com.revature.repositories.EmployeeDAOImpl.insert(EmployeeDAOImpl.java:36)
+	at com.revature.services.EmployeeService.insert(EmployeeService.java:16)
+	at com.revature.util.ConnectionUtil.main(ConnectionUtil.java:21)
+2021-03-04 07:23:51 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:23:51 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 07:23:51 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:23:51 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 07:23:51 WARN  EmployeeDAOImpl:41 - Unable to insert user
+org.postgresql.util.PSQLException: ERROR: relation "sophiag.employee" does not exist
+  Position: 13
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:143)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:132)
+	at com.revature.repositories.EmployeeDAOImpl.insert(EmployeeDAOImpl.java:36)
+	at com.revature.services.EmployeeService.insert(EmployeeService.java:16)
+	at com.revature.util.ConnectionUtil.main(ConnectionUtil.java:21)
+2021-03-04 07:25:19 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:25:19 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 07:25:19 INFO  ConnectionUtil:55 - connection successful
+2021-03-04 07:25:19 INFO  ConnectionUtil:65 - connected to db
+2021-03-04 10:59:56 INFO  ConnectionUtil:46 - connection successful
+2021-03-04 10:59:56 INFO  ConnectionUtil:56 - connected to db
+2021-03-04 15:37:13 INFO  ConnectionUtil:46 - connection successful
+2021-03-04 15:37:13 INFO  ConnectionUtil:56 - connected to db
+2021-03-04 15:37:13 INFO  RequestHelper:117 - [Employee [id=1, firstName=Timmy, lastName=Maximoff, username=tmax, password=secret], Employee [id=2, firstName=testy, lastName=McTestface, username=test123, password=pt]]
+2021-03-04 16:00:05 INFO  ConnectionUtil:46 - connection successful
+2021-03-04 16:00:05 INFO  ConnectionUtil:56 - connected to db
+2021-03-04 16:00:05 INFO  RequestHelper:117 - [Employee [id=1, firstName=Timmy, lastName=Maximoff, username=tmax, password=secret], Employee [id=2, firstName=testy, lastName=McTestface, username=test123, password=pt]]
+2021-03-10 01:35:53 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 01:35:53 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 01:36:33 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 01:36:33 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 12:03:35 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 12:03:35 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 12:03:35 WARN  EmployeeDAOImpl:44 - Unable to insert user
+org.postgresql.util.PSQLException: The column index is out of range: 9, number of columns: 8.
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:65)
+	at org.postgresql.core.v3.SimpleParameterList.setBinaryParameter(SimpleParameterList.java:132)
+	at org.postgresql.jdbc.PgPreparedStatement.bindBytes(PgPreparedStatement.java:983)
+	at org.postgresql.jdbc.PgPreparedStatement.setInt(PgPreparedStatement.java:268)
+	at com.revature.repositories.ReimbursementDaoImpl.insert(ReimbursementDaoImpl.java:37)
+	at com.revature.services.EmployeeService.insert(EmployeeService.java:25)
+	at com.revature.drive.Driver.main(Driver.java:17)
+2021-03-10 12:04:42 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 12:04:42 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:16:36 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:16:36 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:16:36 WARN  EmployeeDAOImpl:88 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name date_submit was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2467)
+	at com.revature.repositories.ReimbursementDaoImpl.findAll(ReimbursementDaoImpl.java:74)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:22:22 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:22:22 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:22:22 WARN  EmployeeDAOImpl:101 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name date_submit was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2467)
+	at com.revature.repositories.ReimbursementDaoImpl.findAllfindAllReimb(ReimbursementDaoImpl.java:87)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:23:30 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:23:30 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:23:30 WARN  EmployeeDAOImpl:100 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name date_submit was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2467)
+	at com.revature.repositories.ReimbursementDaoImpl.findAllfindAllReimb(ReimbursementDaoImpl.java:86)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:29:12 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:29:12 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:29:12 WARN  EmployeeDAOImpl:100 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name id was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2485)
+	at com.revature.repositories.ReimbursementDaoImpl.findAllfindAllReimb(ReimbursementDaoImpl.java:84)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:33:18 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:33:18 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:33:18 WARN  EmployeeDAOImpl:99 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name date_submit was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2467)
+	at com.revature.repositories.ReimbursementDaoImpl.findAllfindAllReimb(ReimbursementDaoImpl.java:85)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:36:37 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:36:37 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:36:37 WARN  EmployeeDAOImpl:98 - Unable to retrieve all users
+org.postgresql.util.PSQLException: The column name date_submit was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2593)
+	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:2467)
+	at com.revature.repositories.ReimbursementDaoImpl.findAllfindAllReimb(ReimbursementDaoImpl.java:85)
+	at com.revature.drive.Driver.main(Driver.java:18)
+2021-03-10 15:37:18 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:37:18 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:39:15 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:39:15 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:43:55 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:43:55 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:43:55 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:43:55 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:44:17 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:44:17 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 15:51:00 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 15:51:00 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 16:22:01 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 16:22:01 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 19:48:00 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 19:48:00 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 19:48:00 WARN  EmployeeDAOImpl:43 - Unable to insert user
+org.postgresql.util.PSQLException: ERROR: column "role_id" of relation "employee" does not exist
+  Position: 74
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:143)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:132)
+	at com.revature.repositories.EmployeeDAOImpl.insert(EmployeeDAOImpl.java:38)
+	at com.revature.services.EmployeeService.insert(EmployeeService.java:20)
+	at com.revature.drive.Driver.main(Driver.java:16)
+2021-03-10 19:49:13 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 19:49:13 INFO  ConnectionUtil:56 - connected to db
+2021-03-10 19:49:13 WARN  EmployeeDAOImpl:43 - Unable to insert user
+org.postgresql.util.PSQLException: ERROR: column "role_id" of relation "employee" does not exist
+  Position: 74
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:143)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:132)
+	at com.revature.repositories.EmployeeDAOImpl.insert(EmployeeDAOImpl.java:38)
+	at com.revature.services.EmployeeService.insert(EmployeeService.java:20)
+	at com.revature.drive.Driver.main(Driver.java:17)
+2021-03-10 19:50:38 INFO  ConnectionUtil:46 - connection successful
+2021-03-10 19:50:39 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 00:01:30 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 00:01:30 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 00:02:43 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 00:02:43 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 00:03:11 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 00:03:11 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 19:36:45 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 19:36:45 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 19:37:00 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 19:37:00 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 19:49:21 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 19:49:21 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:02:57 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:02:57 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:05:04 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:05:04 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:05:04 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:05:04 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:07:00 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:07:00 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:11:07 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:11:07 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:21:17 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:21:17 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:21:53 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:21:53 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:22:12 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:22:12 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:22:31 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:22:31 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:23:47 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:23:47 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:26:38 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:26:38 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:27:01 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:27:01 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:27:20 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:27:20 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:27:30 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:27:30 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:29:52 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:29:52 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 20:30:04 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 20:30:04 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 22:01:19 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 22:01:19 INFO  ConnectionUtil:56 - connected to db
+2021-03-11 22:01:39 INFO  ConnectionUtil:46 - connection successful
+2021-03-11 22:01:39 INFO  ConnectionUtil:56 - connected to db
+2021-03-12 15:36:33 INFO  ConnectionUtil:46 - connection successful
+2021-03-12 15:36:33 INFO  ConnectionUtil:56 - connected to db
+2021-03-12 23:54:51 INFO  ConnectionUtil:46 - connection successful
+2021-03-12 23:54:51 INFO  ConnectionUtil:56 - connected to db
+2021-03-13 01:30:30 INFO  ConnectionUtil:46 - connection successful
+2021-03-13 01:30:30 INFO  ConnectionUtil:56 - connected to db
+2021-03-13 02:08:52 INFO  ConnectionUtil:46 - connection successful
+2021-03-13 02:08:52 INFO  ConnectionUtil:56 - connected to db
